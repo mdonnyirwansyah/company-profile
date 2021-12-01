@@ -23,7 +23,7 @@
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
                     <li class="nav-item">
-                        <a href="{{ route('tentang.profil') }}" class="nav-link">
+                        <a href="{{ route('tentang.profil.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>{{ __('Profil') }}</p>
                         </a>

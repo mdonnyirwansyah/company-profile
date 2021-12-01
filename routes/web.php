@@ -13,17 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('tentang')->name('tentang.')->group(function () {
-        Route::view('profil', 'profil')->name('profil');
+    Route::prefix('tentang')->name('tentang.profil.')->group(function () {
+        Route::get('profil', [\App\Http\Controllers\Backend\ProfilController::class, 'index'])->name('index');
+        Route::post('profil', [\App\Http\Controllers\Backend\ProfilController::class, 'store'])->name('store');
+        Route::put('profil/{profil}', [\App\Http\Controllers\Backend\ProfilController::class, 'update'])->name('update');
     });
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
