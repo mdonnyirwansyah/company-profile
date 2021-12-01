@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
                             </div>
                         </form>
                     </div>

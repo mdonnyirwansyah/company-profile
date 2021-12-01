@@ -2,7 +2,7 @@
     <label for="tentang" class="col-sm-2 col-form-label">Tentang</label>
     <div class="col-sm-10">
         <textarea name="tentang" id="tentang" class="form-control @error('tentang') is-invalid @enderror" rows="3">
-            {{ old('tentang', $profil->tentang) }}
+            {{ old('tentang') ?? $profil->tentang ?? '' }}
         </textarea>
         @error('tentang')
         <span class="error invalid-feedback">
@@ -15,7 +15,7 @@
     <label for="tugas_pokok" class="col-sm-2 col-form-label">Tugas Pokok</label>
     <div class="col-sm-10">
         <textarea name="tugas_pokok" id="tugas_pokok" class="form-control @error('tugas_pokok') is-invalid @enderror" rows="3">
-            {{ old('tentang', $profil->tugas_pokok) }}
+            {{ old('tugas_pokok') ?? $profil->tugas_pokok ?? '' }}
         </textarea>
         @error('tugas_pokok')
         <span class="error invalid-feedback">
@@ -28,7 +28,7 @@
     <label for="fungsi" class="col-sm-2 col-form-label">Fungsi</label>
     <div class="col-sm-10">
         <textarea name="fungsi" id="fungsi" class="form-control @error('fungsi') is-invalid @enderror" rows="3">
-            {{ old('tentang', $profil->fungsi) }}
+            {{ old('fungsi') ?? $profil->fungsi ?? '' }}
         </textarea>
         @error('fungsi')
         <span class="error invalid-feedback">

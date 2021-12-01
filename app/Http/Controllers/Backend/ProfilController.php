@@ -35,7 +35,7 @@ class ProfilController extends Controller
         $request->validate([
             'tentang' => 'required',
             'tugas_pokok' => 'required',
-            'fungsi' => 'required',
+            'fungsi' => 'required'
         ]);
 
         Profil::create($request->all());
@@ -55,7 +55,7 @@ class ProfilController extends Controller
         $request->validate([
             'tentang' => 'required',
             'tugas_pokok' => 'required',
-            'fungsi' => 'required',
+            'fungsi' => 'required'
         ]);
 
         $profil->update($request->all());
