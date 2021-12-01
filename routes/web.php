@@ -29,6 +29,11 @@ Route::middleware('auth')->group(function () {
             Route::post('', [\App\Http\Controllers\Backend\VisiMisiController::class, 'store'])->name('store');
             Route::put('{visi_misi}', [\App\Http\Controllers\Backend\VisiMisiController::class, 'update'])->name('update');
         });
+        Route::prefix('struktur-organisasi')->name('struktur-organisasi.')->group(function () {
+            Route::get('', [\App\Http\Controllers\Backend\StrukturOrganisasiController::class, 'index'])->name('index');
+            Route::post('', [\App\Http\Controllers\Backend\StrukturOrganisasiController::class, 'store'])->name('store');
+            Route::put('{struktur_organisasi}', [\App\Http\Controllers\Backend\StrukturOrganisasiController::class, 'update'])->name('update');
+        });
     });
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
