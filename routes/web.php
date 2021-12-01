@@ -34,6 +34,11 @@ Route::middleware('auth')->group(function () {
             Route::post('', [\App\Http\Controllers\Backend\StrukturOrganisasiController::class, 'store'])->name('store');
             Route::put('{struktur_organisasi}', [\App\Http\Controllers\Backend\StrukturOrganisasiController::class, 'update'])->name('update');
         });
+        Route::prefix('dasar-hukum')->name('dasar-hukum.')->group(function () {
+            Route::get('', [\App\Http\Controllers\Backend\DasarHukumController::class, 'index'])->name('index');
+            Route::post('', [\App\Http\Controllers\Backend\DasarHukumController::class, 'store'])->name('store');
+            Route::put('{dasar_hukum}', [\App\Http\Controllers\Backend\DasarHukumController::class, 'update'])->name('update');
+        });
     });
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
