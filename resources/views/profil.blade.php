@@ -20,7 +20,7 @@
     } );
 
     ClassicEditor
-    .create( document.querySelector( '#fungsigi' ), {
+    .create( document.querySelector( '#fungsi' ), {
         toolbar: [ 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
     } )
     .catch( error => {
