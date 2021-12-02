@@ -41,8 +41,19 @@ Route::middleware('auth')->group(function () {
         });
     });
 
+    Route::prefix('unit-usaha')->name('unit-usaha.')->group(function () {
+        Route::get('', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'index'])->name('index');
+        Route::get('create', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'create'])->name('create');
+        Route::post('', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'store'])->name('store');
+        Route::get('{unit_usaha:slug}/edit', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'edit'])->name('edit');
+        Route::put('{unit_usaha:slug}', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'update'])->name('update');
+        Route::delete('{unit_usaha:slug}', [\App\Http\Controllers\Backend\UnitUsahaController::class, 'destroy'])->name('destroy');
+    });
+
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    Route::prefix('profile')->name('profile.')->group(function () {
+        Route::get('', [\App\Http\Controllers\ProfileController::class, 'show'])->name('show');
+        Route::put('', [\App\Http\Controllers\ProfileController::class, 'update'])->name('update');
+    });
 });

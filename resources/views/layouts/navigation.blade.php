@@ -53,7 +53,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('unit-usaha.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-store"></i>
                     <p>
                         {{ __('Unit Usaha') }}
