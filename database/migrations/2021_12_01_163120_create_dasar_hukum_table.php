@@ -15,7 +15,7 @@ class CreateDasarHukumTable extends Migration
     {
         Schema::create('dasar_hukum', function (Blueprint $table) {
             $table->id();
-            $table->longText('keterangan');
+            $table->longText('landasan_hukum');
             $table->timestamps();
         });
     }

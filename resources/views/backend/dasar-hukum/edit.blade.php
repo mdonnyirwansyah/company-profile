@@ -1,13 +1,9 @@
 @extends('layouts.app')
 
-@section('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-@endsection
-
 @section('scripts')
     <script>
         ClassicEditor
-        .create( document.querySelector( '#keterangan' ), {
+        .create( document.querySelector( '#landasan_hukum' ), {
             toolbar: [ 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
         } )
         .catch( error => {
@@ -15,23 +11,9 @@
         } );
     </script>
     @if ($message = Session::get('success'))
-        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script>
-            toastr.options = {
-                "closeButton": true,
-                "progressBar": true,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            }
-
-            toastr.success('{{ $message }}')
-        </script>
+    <script>
+        toastr.success('{{ $message }}', 'Pemberitahuan,')
+    </script>
     @endif
 @endsection
 
@@ -63,7 +45,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Simpan Perubahan</button>
+                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                             </div>
                             <!-- /.card-footer -->
                         </form>

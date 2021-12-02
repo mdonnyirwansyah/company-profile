@@ -33,7 +33,7 @@ class DasarHukumController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'keterangan' => 'required'
+            'landasan_hukum' => 'required'
         ]);
 
         DasarHukum::create($request->all());
@@ -51,7 +51,7 @@ class DasarHukumController extends Controller
     public function update(Request $request, DasarHukum $dasar_hukum)
     {
         $request->validate([
-            'keterangan' => 'required'
+            'landasan_hukum' => 'required'
         ]);
 
         $dasar_hukum->update($request->all());
