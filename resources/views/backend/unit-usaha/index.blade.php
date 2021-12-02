@@ -36,7 +36,7 @@
                                     <tr>
                                         <th width="5%">No</th>
                                         <th>Nama</th>
-                                        <th>Gambar</th>
+                                        <th width="30%">Gambar</th>
                                         <th width="10%">Aksi</th>
                                     </tr>
                                 </thead>
@@ -45,17 +45,17 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $item->nama }}</td>
-                                            <td>{{ $item->gambar }}</td>
-                                            <td>
-                                                <a class="btn btn-outline-info btn-xs" href="{{ route('unit-usaha.edit', $item) }}">
-                                                    <i class="fa fa-pen"></i>
+                                            <td><img src="{{ asset('storage/'.$item->gambar) }}" alt="preview" class="img-fluid img-thumbnail"></td>
+                                            <td style="display: flex;">
+                                                <a class="btn btn-outline-info btn-xs mr-1" href="{{ route('unit-usaha.edit', $item) }}">
+                                                    <i class="fas fa-pen"></i>
                                                 </a>
-                                                <form method="POST" action="{{ route('unit-usaha.destroy', $item) }}" style="display: inline-block">
+                                                <form method="POST" action="{{ route('unit-usaha.destroy', $item) }}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <a class="btn btn-outline-danger btn-xs" onclick="event.preventDefault(); this.closest('form').submit();">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
+                                                    <button class="btn btn-outline-danger btn-xs" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

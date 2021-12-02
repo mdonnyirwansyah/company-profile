@@ -26,7 +26,6 @@
                                         <th width="5%">No</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th width="10%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,10 +34,6 @@
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>
-                                            <a class="btn btn-outline-info btn-xs"><i class="fa fa-pen"></i></a>
-                                            <a class="btn btn-outline-danger btn-xs"><i class="fa fa-trash"></i></a>
-                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

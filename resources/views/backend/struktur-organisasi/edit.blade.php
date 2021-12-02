@@ -36,7 +36,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-info">Simpan Perubahan</button>
+                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                             </div>
                             <!-- /.card-footer -->
                         </form>
