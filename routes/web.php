@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('frontend.beranda');
-});
+Route::get('/', [\App\Http\Controllers\Frontend\BerandaController::class, 'index'])->name('beranda');
+
+Route::get('unit-usaha/{unit_usaha:slug}', [\App\Http\Controllers\Frontend\UnitUsahaController::class, 'show'])->name('unit-usaha');
 
 Route::prefix('backend')->middleware('auth')->group(function () {
-    Route::get('/dashboard', [\App\Http\Controllers\Backend\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', \App\Http\Controllers\Backend\DashboardController::class)->name('dashboard');
 
     Route::prefix('tentang')->name('tentang.')->group(function () {
         Route::prefix('profil')->name('profil.')->group(function () {

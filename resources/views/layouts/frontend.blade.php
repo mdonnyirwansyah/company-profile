@@ -35,20 +35,23 @@
           <!-- Right navbar links -->
           <ul class="order-1 order-md-3 navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link font-weight-bold">Beranda</a>
+              <a href="{{ route('beranda') }}" class="nav-link font-weight-bold">Beranda</a>
             </li>
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold dropdown-toggle">Tentang Kami</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="#" class="dropdown-item">Some action </a></li>
-                <li><a href="#" class="dropdown-item">Some other action</a></li>
+                <li><a href="#" class="dropdown-item">Profil</a></li>
+                <li><a href="#" class="dropdown-item">Visi dan Misi</a></li>
+                <li><a href="#" class="dropdown-item">Struktur Organisasi</a></li>
+                <li><a href="#" class="dropdown-item">Dasar Hukum</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold dropdown-toggle">Unit Usaha</a>
               <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                <li><a href="#" class="dropdown-item">Some action </a></li>
-                <li><a href="#" class="dropdown-item">Some other action</a></li>
+                  @foreach (unit_usaha() as $item)
+                    <li><a href="{{ route('unit-usaha', $item) }}" class="dropdown-item">{{ $item->nama }}</a></li>
+                  @endforeach
               </ul>
             </li>
           </ul>
