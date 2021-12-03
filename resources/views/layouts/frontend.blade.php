@@ -40,10 +40,10 @@
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold dropdown-toggle">Tentang Kami</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="#" class="dropdown-item">Profil</a></li>
-                <li><a href="#" class="dropdown-item">Visi dan Misi</a></li>
-                <li><a href="#" class="dropdown-item">Struktur Organisasi</a></li>
-                <li><a href="#" class="dropdown-item">Dasar Hukum</a></li>
+                <li><a href="{{ route('profil') }}" class="dropdown-item">Profil</a></li>
+                <li><a href="{{ route('visi-misi') }}" class="dropdown-item">Visi dan Misi</a></li>
+                <li><a href="{{ route('struktur-organisasi') }}" class="dropdown-item">Struktur Organisasi</a></li>
+                <li><a href="{{ route('dasar-hukum') }}" class="dropdown-item">Dasar Hukum</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -81,11 +81,11 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <p class="mb-1 font-weight-bold">Media Sosial</p>
-                    <a href="#" class="d-flex justify-content-start align-items-center">
+                    <a href="#" target="_blank" class="d-flex justify-content-start align-items-center">
                       <img src="{{ asset('images/facebook.svg') }}" alt="Logo" class="brand-image" style="width: 25px; margin-right: 15px;">
                       <p class="m-0 text-dark"><small>P2B UIN Suska Riau</small></p>
                     </a>
-                    <a href="#" class="d-flex justify-content-start align-items-center">
+                    <a href="#" target="_blank" class="d-flex justify-content-start align-items-center">
                       <img src="{{ asset('images/instagram.svg') }}" alt="Logo" class="brand-image" style="width: 25px; margin-right: 15px;">
                       <p class="m-0 text-dark"><small>P2B UIN Suska Riau</small></p>
                     </a>

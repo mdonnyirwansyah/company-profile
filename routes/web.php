@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [\App\Http\Controllers\Frontend\BerandaController::class, 'index'])->name('beranda');
-
 Route::get('unit-usaha/{unit_usaha:slug}', [\App\Http\Controllers\Frontend\UnitUsahaController::class, 'show'])->name('unit-usaha');
+Route::get('/profil', [\App\Http\Controllers\Frontend\ProfilController::class, 'index'])->name('profil');
+Route::get('/visi-misi', [\App\Http\Controllers\Frontend\VisiMisiController::class, 'index'])->name('visi-misi');
+Route::get('/struktur-organisasi', [\App\Http\Controllers\Frontend\StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
+Route::get('/dasar-hukum', [\App\Http\Controllers\Frontend\DasarHukumController::class, 'index'])->name('dasar-hukum');
 
 Route::prefix('backend')->middleware('auth')->group(function () {
     Route::get('/dashboard', \App\Http\Controllers\Backend\DashboardController::class)->name('dashboard');
