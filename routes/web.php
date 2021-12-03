@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('frontend.beranda');
+});
 
-Route::middleware('auth')->group(function () {
+Route::prefix('backend')->middleware('auth')->group(function () {
+    Route::get('/dashboard', [\App\Http\Controllers\Backend\DashboardController::class, 'index'])->name('dashboard');
+
     Route::prefix('tentang')->name('tentang.')->group(function () {
         Route::prefix('profil')->name('profil.')->group(function () {
             Route::get('', [\App\Http\Controllers\Backend\ProfilController::class, 'index'])->name('index');

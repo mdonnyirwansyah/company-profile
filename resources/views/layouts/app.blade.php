@@ -56,10 +56,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/" class="brand-link">
-            <img src="{{ asset('images/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
+        <a href="#" class="brand-link">
+            <img src="{{ asset('images/UIN-Suska-Riau.svg') }}" alt="Logo" class="brand-image">
             <span class="brand-text font-weight-light">{{ config('app.name', 'Laravel') }}</span>
         </a>
 
@@ -79,7 +77,7 @@
             1.0
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2021 <a href="#">Company Profile</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2021 <a href="#">{{ config('app.name', 'Laravel') }}</a></strong>
     </footer>
 </div>
 <!-- ./wrapper -->

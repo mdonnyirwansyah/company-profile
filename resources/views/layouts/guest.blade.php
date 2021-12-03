@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/">{{ config('app.name', 'Laravel') }}</a>
+        <a href="/" class="font-weight-bold">{{ config('app.name', 'Laravel') }}</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -27,9 +27,8 @@
 </div>
 <!-- /.login-box -->
 
-<script src="{{ asset('js/app.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
 </body>
