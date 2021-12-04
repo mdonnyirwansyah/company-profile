@@ -6,6 +6,15 @@
         toastr.success('{{ $message }}', 'Pemberitahuan,')
     </script>
     @endif
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#keterangan' ), {
+            toolbar: [ 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+        } )
+        .catch( error => {
+            console.log( error );
+        } );
+    </script>
 @endsection
 
 @section('content')

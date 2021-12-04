@@ -7,20 +7,20 @@
         @foreach ($profil as $item)
             <div class="col-12">
                 <h3 class="mb-3 mb-md-5 font-weight-bold text-center">Profil</h3>
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
                         <h5 class="mb-3 font-weight-bold">Tentang</h5>
                         <div class="text-justify">
                             {!! $item->tentang !!}
                         </div>
                     </div>
-                    <div class="col-md-12 border-top">
+                    <div class="col-md-7 border-top">
                         <h5 class="mb-3 font-weight-bold">Tugas Pokok</h5>
                         <div class="text-justify">
                             {!! $item->tugas_pokok !!}
                         </div>
                     </div>
-                    <div class="col-md-12 border-top">
+                    <div class="col-md-7 border-top">
                         <h5 class="mb-3 font-weight-bold">Fungsi</h5>
                         <div class="text-justify">
                             {!! $item->fungsi !!}

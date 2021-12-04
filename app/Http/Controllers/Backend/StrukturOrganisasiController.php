@@ -40,7 +40,8 @@ class StrukturOrganisasiController extends Controller
 
         StrukturOrganisasi::create([
             'nama' => $request->nama,
-            'gambar' => $request->file('gambar')->store('uploads/images')
+            'gambar' => $request->file('gambar')->store('uploads/images'),
+            'keterangan' => $request->keterangan
         ]);
 
         return redirect()->back()->with('success', 'Struktur Organisasi berhasil diperbarui.');
@@ -65,12 +66,14 @@ class StrukturOrganisasiController extends Controller
 
             $struktur_organisasi->update([
                 'nama' => $request->nama,
-                'gambar' => $request->file('gambar')->store('uploads/images')
+                'gambar' => $request->file('gambar')->store('uploads/images'),
+                'keterangan' => $request->keterangan
             ]);
         } else {
             $struktur_organisasi->update([
                 'nama' => $request->nama,
-                'gambar' => $struktur_organisasi->gambar
+                'gambar' => $struktur_organisasi->gambar,
+                'keterangan' => $request->keterangan
             ]);
         }
 

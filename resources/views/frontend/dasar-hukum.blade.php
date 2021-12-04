@@ -7,8 +7,8 @@
         @foreach ($dasar_hukum as $item)
             <div class="col-12">
                 <h3 class="mb-3 mb-md-5 font-weight-bold text-center">Dasar Hukum</h3>
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
                         <h5 class="mb-3 font-weight-bold">Landasan Hukum</h5>
                         <div class="text-justify">
                             {!! $item->landasan_hukum !!}

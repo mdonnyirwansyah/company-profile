@@ -17,6 +17,7 @@ class CreateStrukturOrganisasiTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('gambar');
+            $table->longText('keterangan');
             $table->timestamps();
         });
     }
