@@ -92,18 +92,20 @@
                 </div>
                 <div class="col-md-4">
                     <p class="mb-1 font-weight-bold">Kontak Kami</p>
-                    <div class="d-flex justify-content-start align-items-center">
-                        <i class="fas fa-map-marker-alt text-secondary" style="margin-right: 19px"></i>
-                        <p class="m-0"><small>Universitas Islam Negeri Sultan Syarif Kasim Riau</small></p>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center">
-                        <i class="fas fa-envelope text-secondary" style="margin-right: 15px"></i>
-                        <p class="m-0"><small>p2b@uin-suska.ac.id</small></p>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center">
-                        <i class="fas fa-clock text-secondary" style="margin-right: 15px"></i>
-                        <p class="m-0"><small>Senin - Jumat: 8:00 - 16:00</small></p>
-                    </div>
+                    @foreach (kontak() as $kontak)
+                      <div class="d-flex justify-content-start align-items-center">
+                          <i class="fas fa-map-marker-alt text-secondary" style="margin-right: 19px"></i>
+                          <p class="m-0"><small>{{ $kontak->alamat }}</small></p>
+                      </div>
+                      <div class="d-flex justify-content-start align-items-center">
+                          <i class="fas fa-envelope text-secondary" style="margin-right: 15px"></i>
+                          <p class="m-0"><small>{{ $kontak->email }}</small></p>
+                      </div>
+                      <div class="d-flex justify-content-start align-items-center">
+                          <i class="fas fa-clock text-secondary" style="margin-right: 15px"></i>
+                          <p class="m-0"><small>{{ $kontak->jam_kerja }}</small></p>
+                      </div>
+                    @endforeach
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center border-top mt-2">

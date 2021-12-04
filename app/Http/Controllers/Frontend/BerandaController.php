@@ -9,7 +9,7 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        $unit_usaha = UnitUsaha::orderBy('id', 'DESC')->limit(3)->get();
+        $unit_usaha = UnitUsaha::orderBy('dilihat', 'DESC')->limit(3)->get();
 
         return view('frontend.beranda', compact('unit_usaha'));
     }

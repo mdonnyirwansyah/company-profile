@@ -40,7 +40,7 @@ class ProfilController extends Controller
 
         Profil::create($request->all());
 
-        return redirect()->back()->with('success', 'Profile berhasil diperbarui.');
+        return redirect()->back()->with('success', 'Profil berhasil diperbarui.');
     }
 
     /**
@@ -60,6 +60,6 @@ class ProfilController extends Controller
 
         $profil->update($request->all());
 
-        return redirect()->back()->with('success', 'Profile berhasil diperbarui.');
+        return redirect()->back()->with('success', 'Profil berhasil diperbarui.');
     }
 }

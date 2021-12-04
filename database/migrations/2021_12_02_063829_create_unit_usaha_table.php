@@ -19,6 +19,7 @@ class CreateUnitUsahaTable extends Migration
             $table->longText('keterangan');
             $table->string('gambar');
             $table->string('slug');
+            $table->integer('dilihat')->nullable();
             $table->timestamps();
         });
     }

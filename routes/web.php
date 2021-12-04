@@ -46,6 +46,11 @@ Route::prefix('backend')->middleware('auth')->group(function () {
             Route::post('', [\App\Http\Controllers\Backend\DasarHukumController::class, 'store'])->name('store');
             Route::put('{dasar_hukum}', [\App\Http\Controllers\Backend\DasarHukumController::class, 'update'])->name('update');
         });
+        Route::prefix('kontak')->name('kontak.')->group(function () {
+            Route::get('', [\App\Http\Controllers\Backend\KontakController::class, 'index'])->name('index');
+            Route::post('', [\App\Http\Controllers\Backend\KontakController::class, 'store'])->name('store');
+            Route::put('{kontak}', [\App\Http\Controllers\Backend\KontakController::class, 'update'])->name('update');
+        });
     });
 
     Route::prefix('unit-usaha')->name('unit-usaha.')->group(function () {

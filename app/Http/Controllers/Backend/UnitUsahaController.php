@@ -17,7 +17,7 @@ class UnitUsahaController extends Controller
      */
     public function index()
     {
-        $unit_usaha = UnitUsaha::all();
+        $unit_usaha = UnitUsaha::orderBy('dilihat', 'DESC')->get();
 
         return view('backend.unit-usaha.index', compact('unit_usaha'));
     }

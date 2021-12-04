@@ -49,6 +49,13 @@
                             <p>{{ __('Dasar Hukum') }}</p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('tentang.kontak.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>{{ __('Kontak') }}</p>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

@@ -36,7 +36,7 @@
                                     <tr>
                                         <th width="5%">No</th>
                                         <th>Nama</th>
-                                        <th width="30%">Gambar</th>
+                                        <th>Dilihat</th>
                                         <th width="10%">Aksi</th>
                                     </tr>
                                 </thead>
@@ -45,7 +45,7 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $item->nama }}</td>
-                                            <td><img src="{{ asset('storage/'.$item->gambar) }}" alt="preview" class="img-fluid img-thumbnail"></td>
+                                            <td>{{ $item->dilihat }}</td>
                                             <td style="display: flex;">
                                                 <a class="btn btn-outline-info btn-xs mr-1" href="{{ route('unit-usaha.edit', $item) }}">
                                                     <i class="fas fa-pen"></i>
