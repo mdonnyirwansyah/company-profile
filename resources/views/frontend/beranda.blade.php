@@ -1,21 +1,71 @@
 @extends('layouts.frontend')
 
+@section('scripts')
+    <script>
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+        $(document).ready(function() {
+            $('#search').select2({  
+                theme: 'bootstrap4',
+                placeholder: 'Tulis kata kunci mu disini',
+                ajax: {
+                    url: "{{ route('unit-usaha.search') }}",
+                    type: 'POST',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function(params) {
+                        return{
+                            _token: CSRF_TOKEN,
+                            search: params.term
+                        }
+                    },
+                    processResults: function(response) {
+                        return{
+                            results: response
+                        }
+                    },
+                    cache: true
+                }
+            });
+            $('#search').change(function (e) {
+                let search = $('#search').val();
+                $.ajax({
+                    url: "{{ route('unit-usaha.find') }}",
+                    type: "POST",
+                    data: {
+                        search
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        if(response.success){
+                            window.location.href = response.success;
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + '\n' + xhr.responseText + '\n' + thrownError);
+                    }
+                });
+            });
+        });
+    </script>
+@endsection
+
 @section('content')
-<div class="row d-flex justify-content-center align-items-center bg-success" style="height: 90vh; background: url({{ asset('images/background.jpg') }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="row justify-content-center align-items-center bg-success" style="height: 90vh; background: url({{ asset('images/background.jpg') }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
     <div class="col-10 col-md-6">
         <h1 class="font-weight-bold" style="text-shadow: 2px 2px 2px rgb(90, 90, 90);">Selamat Datang di Website</h1>
         <h3 class="mb-3 font-weight-bold" style="text-shadow: 2px 2px 2px rgb(90, 90, 90);">Pusat Pengembangan Bisnis (P2B) Universitas Islam Negeri Sultan Syarif Kasim Riau</h3>
         <p  style="text-shadow: 2px 2px 2px rgb(90, 90, 90);">Temukan apa yang kamu butuhkan disini</p>
-        <form action="simple-results.html">
-            <div class="input-group">
-                <input type="search" class="form-control form-control-lg" placeholder="Tulis kata kunci mu disini">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-lg btn-default">
-                        <i class="fa fa-search text-success"></i>
-                    </button>
-                </div>
+        <div class="input-group">
+            <select type="search" id="search" class="form-control form-control-lg" style="width: 90%"></select>
+            <div class="input-group-append" style="width: 10%">
+                <button class="btn btn-default disable">
+                    <i class="fa fa-search text-success"></i>
+                </button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <div class="container my-3 my-md-5">

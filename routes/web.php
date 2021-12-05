@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::get('/', [\App\Http\Controllers\Frontend\BerandaController::class, 'index'])->name('beranda');
 Route::get('unit-usaha/{unit_usaha:slug}', [\App\Http\Controllers\Frontend\UnitUsahaController::class, 'show'])->name('unit-usaha');
+Route::post('unit-usaha/search', [\App\Http\Controllers\Frontend\UnitUsahaController::class, 'search'])->name('unit-usaha.search');
+Route::post('unit-usaha/find', [\App\Http\Controllers\Frontend\UnitUsahaController::class, 'find'])->name('unit-usaha.find');
 Route::get('/profil', [\App\Http\Controllers\Frontend\ProfilController::class, 'index'])->name('profil');
 Route::get('/visi-misi', [\App\Http\Controllers\Frontend\VisiMisiController::class, 'index'])->name('visi-misi');
 Route::get('/struktur-organisasi', [\App\Http\Controllers\Frontend\StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
