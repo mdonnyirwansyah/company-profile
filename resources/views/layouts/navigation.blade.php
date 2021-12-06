@@ -14,6 +14,15 @@
             </li>
 
             <li class="nav-item">
+                <a href="{{ route('background.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-image"></i>
+                    <p>
+                        {{ __('Background') }}
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon far fa-address-card"></i>
                     <p>

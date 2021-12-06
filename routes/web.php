@@ -26,6 +26,12 @@ Route::get('/dasar-hukum', [\App\Http\Controllers\Frontend\DasarHukumController:
 
 Route::prefix('backend')->middleware('auth')->group(function () {
     Route::get('/dashboard', \App\Http\Controllers\Backend\DashboardController::class)->name('dashboard');
+    
+    Route::prefix('background')->name('background.')->group(function () {
+        Route::get('', [\App\Http\Controllers\Backend\BackgroundController::class, 'index'])->name('index');
+        Route::post('', [\App\Http\Controllers\Backend\BackgroundController::class, 'store'])->name('store');
+        Route::put('{Background}', [\App\Http\Controllers\Backend\BackgroundController::class, 'update'])->name('update');
+    });
 
     Route::prefix('tentang')->name('tentang.')->group(function () {
         Route::prefix('profil')->name('profil.')->group(function () {

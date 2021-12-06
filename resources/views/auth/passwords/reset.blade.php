@@ -11,7 +11,7 @@
 
             <div class="input-group mb-3">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                       placeholder="Email" required autofocus>
+                       placeholder="Email" autofocus>
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
@@ -26,7 +26,7 @@
 
             <div class="input-group mb-3">
                 <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                       placeholder="{{ __('Password') }}" required>
+                       placeholder="{{ __('Password') }}">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>
@@ -42,7 +42,7 @@
             <div class="input-group mb-3">
                 <input type="password" name="password_confirmation"
                        class="form-control @error('password_confirmation') is-invalid @enderror"
-                       placeholder="{{ __('Confirm Password') }}" required>
+                       placeholder="{{ __('Confirm Password') }}">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>

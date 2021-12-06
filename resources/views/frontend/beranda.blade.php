@@ -44,7 +44,7 @@
                         }
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status + '\n' + xhr.responseText + '\n' + thrownError);
+                        console.log(xhr.status + '\n' + xhr.responseText + '\n' + thrownError);
                     }
                 });
             });
@@ -53,7 +53,7 @@
 @endsection
 
 @section('content')
-<div class="row justify-content-center align-items-center bg-success" style="height: 90vh; background: url({{ asset('images/background.jpg') }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="row justify-content-center align-items-center bg-success" style="height: 90vh; @isset($background) background: url({{ asset('storage/'.$background->gambar) }}) @endisset no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
     <div class="col-10 col-md-6">
         <h1 class="font-weight-bold" style="text-shadow: 2px 2px 2px rgb(90, 90, 90);">Selamat Datang di Website</h1>
         <h3 class="mb-3 font-weight-bold" style="text-shadow: 2px 2px 2px rgb(90, 90, 90);">Pusat Pengembangan Bisnis (P2B) Universitas Islam Negeri Sultan Syarif Kasim Riau</h3>

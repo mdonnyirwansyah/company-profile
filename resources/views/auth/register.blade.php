@@ -9,7 +9,7 @@
 
             <div class="input-group mb-3">
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                       placeholder="{{ __('Name') }}" required autocomplete="name" autofocus>
+                       placeholder="{{ __('Name') }}" autocomplete="name" autofocus>
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-user"></span>
@@ -24,7 +24,7 @@
 
             <div class="input-group mb-3">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                       placeholder="{{ __('Email') }}" required autocomplete="email">
+                       placeholder="{{ __('Email') }}" autocomplete="email">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
@@ -39,7 +39,7 @@
 
             <div class="input-group mb-3">
                 <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                       placeholder="{{ __('Password') }}" required autocomplete="new-password">
+                       placeholder="{{ __('Password') }}" autocomplete="new-password">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>
@@ -55,7 +55,7 @@
             <div class="input-group mb-3">
                 <input type="password" name="password_confirmation"
                        class="form-control @error('password_confirmation') is-invalid @enderror"
-                       placeholder="{{ __('Confirm Password') }}" required autocomplete="new-password">
+                       placeholder="{{ __('Confirm Password') }}" autocomplete="new-password">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>
